@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:chat_firebase_test1/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -51,6 +52,8 @@ class _CreateAccountState extends State<CreateAccount> {
           setState(() {
             _isLoading = false;
           });
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => HomeScreen()));
         } else {
           print("Account creation failed");
         }
