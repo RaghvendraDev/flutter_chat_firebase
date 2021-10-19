@@ -75,6 +75,7 @@ Future<User?> login(String email, String pass) async {
 
 Future logout(BuildContext context) async {
   FirebaseAuth _auth = FirebaseAuth.instance;
+
   try {
     await _auth.signOut().then((value) {
       Navigator.push(

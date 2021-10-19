@@ -65,8 +65,19 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
         title: Text("Home Page"),
         actions: [
           IconButton(
-              onPressed: () {
-                logout(context);
+              onPressed: () async {
+                //setting online/offline status to current user
+                try {
+                  await _firestore
+                      .collection("users")
+                      .doc(_auth.currentUser!.uid)
+                      .update({
+                    "status": "Offline",
+                  });
+                  logout(context);
+                } catch (e) {
+                  // print("status cant be change");
+                }
               },
               icon: Icon(Icons.logout)),
         ],
