@@ -1,3 +1,4 @@
+import 'package:chat_firebase_test1/first_screen.dart';
 import 'package:chat_firebase_test1/home_screen.dart';
 import 'package:chat_firebase_test1/login_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -10,7 +11,8 @@ class Authenticate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (_auth.currentUser != null) {
-      return HomeScreen();
+      // return HomeScreen();
+      return FirstScreen();
     } else {
       return LoginScreen();
     }

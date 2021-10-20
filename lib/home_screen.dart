@@ -73,8 +73,9 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                       .doc(_auth.currentUser!.uid)
                       .update({
                     "status": "Offline",
+                  }).then((value) {
+                    logout(context);
                   });
-                  logout(context);
                 } catch (e) {
                   // print("status cant be change");
                 }

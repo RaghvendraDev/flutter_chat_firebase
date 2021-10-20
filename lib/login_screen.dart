@@ -1,5 +1,6 @@
 import 'package:chat_firebase_test1/crate_login_account.dart';
 import 'package:chat_firebase_test1/create_account.dart';
+import 'package:chat_firebase_test1/first_screen.dart';
 import 'package:chat_firebase_test1/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -124,9 +125,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         SizedBox(
                           height: size.height / 10,
                         ),
-                        customButton(
-                          size,
-                        ),
+                        customButton(size),
                         SizedBox(
                           height: size.height / 20,
                         ),
@@ -173,7 +172,9 @@ class _LoginScreenState extends State<LoginScreen> {
           });
 
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => HomeScreen()));
+              // context, MaterialPageRoute(builder: (context) => HomeScreen()));
+              context,
+              MaterialPageRoute(builder: (context) => FirstScreen()));
         } else {
           print("Login failed");
           setState(() {
