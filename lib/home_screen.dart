@@ -1,5 +1,6 @@
 import 'package:chat_firebase_test1/chatroom.dart';
 import 'package:chat_firebase_test1/crate_login_account.dart';
+import 'package:chat_firebase_test1/logout_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -63,25 +64,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
     return Scaffold(
       appBar: AppBar(
         title: Text("Home Page"),
-        actions: [
-          IconButton(
-              onPressed: () async {
-                //setting online/offline status to current user
-                try {
-                  await _firestore
-                      .collection("users")
-                      .doc(_auth.currentUser!.uid)
-                      .update({
-                    "status": "Offline",
-                  }).then((value) {
-                    logout(context);
-                  });
-                } catch (e) {
-                  // print("status cant be change");
-                }
-              },
-              icon: Icon(Icons.logout)),
-        ],
+        actions: [LogoutWidget()],
       ),
       body: userMap != null
           ? ListView.builder(

@@ -1,5 +1,6 @@
 import 'package:chat_firebase_test1/home_screen.dart';
 import 'package:chat_firebase_test1/landing_screens.dart';
+import 'package:chat_firebase_test1/setting_screen.dart';
 import 'package:flutter/material.dart';
 
 class FirstScreen extends StatefulWidget {
@@ -12,7 +13,7 @@ class FirstScreen extends StatefulWidget {
 class _FirstScreenState extends State<FirstScreen> {
   int _currentIndex = 0;
 
-  final screens = [LandingScreen(), HomeScreen()];
+  final screens = [LandingScreen(), HomeScreen(), SettingsScreen()];
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +44,11 @@ class _FirstScreenState extends State<FirstScreen> {
             icon: Icon(Icons.chat),
             label: "Chat",
             backgroundColor: Colors.pink,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: "Setting",
+            backgroundColor: Colors.purple,
           ),
         ],
       ),
